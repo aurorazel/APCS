@@ -15,9 +15,10 @@ public class Phrase{                // Check All
     }
     public void replaceNthOccurrence(String str1,int n,String str2){
         int idx=findNthOccurrence(str1,n);
-        if (idx==-1) return -1;
-        int l1=str1.length(),l=currentPhrase.length();
-        currentPhrase=currentPhrase.substring(idx)+str2+currentPhrase.substring(idx+l1,l);
+        if (idx!=-1){
+            currentPhrase=currentPhrase.substring(0,idx)+str2+
+                    currentPhrase.substring(idx+str1.length());
+        }
     }
     public void findLastOccurrence(String str){
         int idx=-1,n=0;
